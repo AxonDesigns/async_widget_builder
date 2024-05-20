@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 extension StreamWidgetBuilder<T> on Stream<T> {
-  Widget widget({
+  Widget buildWidget({
     T? initialData,
     required Widget Function(T data) data,
     required Widget Function(ConnectionState state) loading,

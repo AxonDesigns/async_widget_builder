@@ -31,7 +31,7 @@ import 'package:async_widget_builder/async_widget_builder.dart';
 ### Future
 
 ```dart
-exampleFuture.widget(
+exampleFuture.buildWidget(
   data: (data) => Text(data),
   loading: () => const CircularProgressIndicator(),
   error: (err, stackTrace) => Text('Error: $err'),
@@ -41,7 +41,7 @@ exampleFuture.widget(
 ### Stream
 
 ```dart
-exampleStream.widget(
+exampleStream.buildWidget(
   data: (data) => Text(data),
   loading: (state) => const CircularProgressIndicator(),
   error: (err, stackTrace) => Text('Error: $err'),

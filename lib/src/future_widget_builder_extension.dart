@@ -1,7 +1,7 @@
 import 'package:flutter/widgets.dart';
 
 extension FutureWidgetBuilder<T> on Future<T> {
-  Widget widget({
+  Widget buildWidget({
     T? initialData,
     required Widget Function(T data) data,
     required Widget Function() loading,
