@@ -1,39 +1,49 @@
-<!--
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# async_widget_builder
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages).
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" height="28px" />
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages).
--->
+Adds two handy functions to make it easier to deal with async data types in the widget tree.
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
-
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
 
 ## Getting started
 
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
+First, add the `async_widget_builder` package to your pubspec.yaml.
+```yaml
+dependencies:
+  async_widget_builder: <Package version>
+```
+or
+```yaml
+dependencies:
+  async_widget_builder:
+    git: 
+      url: https://github.com/AxonDesigns/async_widget_builder.git
+```
+then, execute `flutter pub get`.
+
+Now, import the package in your Dart code, use:
+```dart
+import 'package:async_widget_builder/async_widget_builder.dart';
+```
 
 ## Usage
 
-TODO: Include short and useful examples for package users. Add longer examples
-to `/example` folder.
+### Future
 
 ```dart
-const like = 'sample';
+exampleFuture.widget(
+  data: (data) => Text(data),
+  loading: () => const CircularProgressIndicator(),
+  error: (err, stackTrace) => Text('Error: $err'),
+)
 ```
 
-## Additional information
+### Stream
 
-TODO: Tell users more about the package: where to find more information, how to
-contribute to the package, how to file issues, what response they can expect
-from the package authors, and more.
+```dart
+exampleStream.widget(
+  data: (data) => Text(data),
+  loading: (state) => const CircularProgressIndicator(),
+  error: (err, stackTrace) => Text('Error: $err'),
+)
+```
